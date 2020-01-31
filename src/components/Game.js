@@ -17,9 +17,12 @@ class Game extends React.Component {
   }
 
   // TODO: create a componentDidMount() which will set the current time
+  componentDidMount() {
+    this.setCurrentTime()
+  }
   
   setCurrentTime = () => {
-    this.setState({ time: new Date(Date.now())});
+    this.setState({ time: new Date(Date.now()) });
   }
 
   addPancake = () => {
@@ -41,7 +44,7 @@ class Game extends React.Component {
 
   render() {
     const { pancakes, burnt, cooked, raw, time } = this.state;
-    const pans = pancakes.map((pancake, index) => <Pancake key={index} id={pancake} takeItOff={this.takeItOff} />);
+    const pans = pancakes.map((pancake, index) => <Pancake key={pancake} id={pancake} takeItOff={this.takeItOff} />);
 
     return (
       <div className="Game">
